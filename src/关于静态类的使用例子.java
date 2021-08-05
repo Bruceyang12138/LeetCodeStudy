@@ -1,7 +1,7 @@
-public class test {
+public class 关于静态类的使用例子 {
 
     public static void main(String[] args) {
-           // QUN q1 =new QUN(4);//这里会报错的 
+           // QUN q1 =new QUN(4);//这里会报错的
         System.out.println("Welcome to qunqunstyle's Blog!");
     }
     public class QUN {
