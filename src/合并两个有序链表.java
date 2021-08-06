@@ -75,12 +75,16 @@ public class 合并两个有序链表 {
         }
         if(i!=null){
             System.out.println("链表1内还有值");
-            ansNext=i;
+            ansNext.next=i;
         }else if(j!=null){
             System.out.println("链表2内还有值");
-            ansNext=j;
+            ansNext.next=j;
         }
         //ans 后面直接拼接上工作指针还没走完的链表
+          if(l==null && r==null){
+
+              return l;
+          }
         return ans.next;//初始化头结点的值不需要git
     }
 
