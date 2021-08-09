@@ -2,59 +2,37 @@ public class 移除元素_27 {
 
 //可以先使用交换排序，让数组变为有序表
 public static void main(String[] args) {
-    int[] nums={1,9,3,7,6,6,6,4,3};
+    int[] nums={6,6};
     System.out.println("最终长度为="+removeElement(nums,6));
 }
 
     public  static int removeElement(int[] nums, int val){
-        int i=0;
-        int j=1;
-        int len =nums.length;
         int temp;
-        if(nums.length == 0 || ( nums.length==1 && nums[0]==val)){
-            return 0;
-        }else if(nums.length == 1 && nums[0]!=val){
-            return nums.length;
-        }
+        int len=nums.length;//最终长度
+        for(int i=0 ;i+1<len;i++){
+            //有序表内两个相邻元素相等，删去后面那个
 
-        for (i=0; i<nums.length; i++)
-        {
-            for ( j=nums.length-1; j>i; j--)
-            {
-                if (nums[j]<nums[j-1]){
-                    temp = nums[j];
-                    nums[j]=nums[j-1];
-                    nums[j-1]=temp;
+            if(nums[i]==val ){
+                for(int j=i;j+1<len;j++){
+                    nums[j]=nums[j+1];
                 }
 
-            }
-        }
-        System.out.println("排序后的数组为");
-        for(int s=0;s<nums.length;s++){
-            System.out.println(nums[s]);
-        }
-        i=0;
-        j=1;
-
-        //双指针法
-        while (j<nums.length){
-            if(nums[i] == val){
-                if(nums[j]==val){
-                    j++;
-                }else{
-                    nums[i]=nums[j];
-
-                }
+                len=len-1;
+                i--;
+                System.out.println("数组长度已减一,现在为"+len);
+                //出现相同时.i当然要回退一位，方便去判断下一个是否相同
             }else{
-                i++;
-                j++;
+                return 0;
             }
         }
-        System.out.println("现在的数组是");
-        for(int s=0;s<i;s++){
-            System.out.println(nums[s]);
+        System.out.println("现在的len为 "+len);
+        if((nums[0] ==val && len==1) || len==0){
+            return 0;
         }
-        len =i;
+        for(int i =0;i<len-1;i++){
+            System.out.println(nums[i]);
+        }
+
         return  len;
     }
 }
