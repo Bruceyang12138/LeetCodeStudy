@@ -15,7 +15,6 @@ public class 删除有序数组中的重复项 {
                 System.out.println("i的值为="+i+"   temp="+temp+"   nums[i+1]="+nums[i+1]);
                 for(int j=i+2;j<len;j++){
                     nums[j-1]=nums[j];
-
                 }
 
                 len=len-1;
