@@ -13,6 +13,8 @@ public static void main(String[] args) {
         int temp;
         if(nums.length == 0 || ( nums.length==1 && nums[0]==val)){
             return 0;
+        }else if(nums.length == 1 && nums[0]!=val){
+            return nums.length;
         }
 
         for (i=0; i<nums.length; i++)
