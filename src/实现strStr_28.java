@@ -4,8 +4,6 @@ public class 实现strStr_28 {
         String needle="ll";
         System.out.println(strStr(haystack,needle));
     }
-
-
     public static int strStr(String haystack,String needle){
         int ans=-1;
         int i=0;//主串用指针
